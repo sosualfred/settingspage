@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:settingspage/utils/theme.dart';
 import 'package:settingspage/widgets/profile_header_widget.dart';
 import 'package:settingspage/widgets/settings_item_widget.dart';
 
@@ -7,6 +8,8 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double deviceHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Colors.black87,
       appBar: AppBar(
@@ -26,9 +29,7 @@ class SettingsScreen extends StatelessWidget {
                 image: "assets/images/profile.jpeg",
                 isProUser: true,
               ),
-              SizedBox(
-                height: 30,
-              ),
+              SizedBox(height: deviceHeight * 0.04),
               SettingsItem(
                 title: "iCloud",
                 actionText: "Disabled",
@@ -67,36 +68,12 @@ class SettingsScreen extends StatelessWidget {
                 icon: Icons.search,
                 iconBackgroundColor: Colors.amber[900]!,
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                "Logout",
-                style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 16,
-                ),
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              Text(
-                "Privacy Policy",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                "Terms and Conditions",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                ),
-              ),
+              SizedBox(height: deviceHeight * 0.03),
+              Text("Logout", style: secondaryTextStyle),
+              SizedBox(height: deviceHeight * 0.04),
+              Text("Privacy Policy", style: primaryTextStyle),
+              SizedBox(height: deviceHeight * 0.02),
+              Text("Terms and Conditions", style: primaryTextStyle),
             ],
           ),
         ),
