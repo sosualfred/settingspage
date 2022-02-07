@@ -20,6 +20,7 @@ class SettingsScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -74,6 +75,7 @@ class SettingsScreen extends StatelessWidget {
               Text("Privacy Policy", style: primaryTextStyle),
               SizedBox(height: deviceHeight * 0.02),
               Text("Terms and Conditions", style: primaryTextStyle),
+              SizedBox(height: deviceHeight * 0.02),
             ],
           ),
         ),
